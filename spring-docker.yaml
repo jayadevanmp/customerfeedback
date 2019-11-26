@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: spring-dock
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: spring-dock
+        tier: display
+    spec:
+      containers:
+        - image: us.icr.io/pramspring/docker
+          name: spring-dock
+          imagePullPolicy: Always
+          ports:
+          - name: http
+            containerPort: 9999

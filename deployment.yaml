@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: feedback
+spec:
+  selector:
+    matchLabels:
+        app: feedback
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: feedback
+        tier: display
+    spec:
+      containers:
+        - image: us.icr.io/pramod/feedback-application
+          name: feedback
+          imagePullPolicy: Always
+          ports:
+          - name: http
+            containerPort: 9999

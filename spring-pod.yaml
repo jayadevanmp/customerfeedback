@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: spring-dock
+  labels:
+   app: spring-dock
+spec:
+  containers:
+  - name: spring-dock
+    image: us.icr.io/pramspring/docker
+    ports:
+      - containerPort: 9999

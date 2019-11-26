@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: feedback
+  labels:
+   app: feedback
+spec:
+  containers:
+  - name: feedback
+    image: us.icr.io/pramod/feedback-application
+    ports:
+      - containerPort: 9999

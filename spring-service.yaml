@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-dock
+  labels:
+    app: spring-dock
+spec:
+  type: NodePort
+  ports:
+    - port: 9999
+      protocol: TCP
+      targetPort: 9999
+      nodePort: 30091
+  selector:
+    app: spring-dock
+    tier: display
